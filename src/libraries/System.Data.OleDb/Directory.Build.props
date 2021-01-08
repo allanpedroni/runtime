@@ -1,6 +1,0 @@
-﻿<Project>
-  <Import Project="..\Directory.Build.props" />
-  <PropertyGroup>
-    <IsWindowsSpecific>true</IsWindowsSpecific>
-  </PropertyGroup>
-</Project>
