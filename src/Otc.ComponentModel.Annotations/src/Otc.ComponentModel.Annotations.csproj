@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<TargetFramework>netstandard2.1</TargetFramework>
+		<Nullable>enable</Nullable>
+		<Authors>Ole Consignado</Authors>
+		<Product />
+		<Description>
+			This is a customization of System.ComponentModel.Annotations. Sources have been forked from https://github.com/dotnet/runtime/tree/v5.0.1/ then customized by Ole Consignado in order to meet it needs.
+			Original sources should be found at: https://github.com/dotnet/runtime/tree/v5.0.1/src/libraries/System.ComponentModel.Annotations
+		</Description>
+		<NeutralLanguage>pt-BR</NeutralLanguage>
+		<Company>Ole Consignado</Company>
+		<Version>2.0.0</Version>
+		<PackageProjectUrl>https://github.com/OleConsignado/otc-annotations</PackageProjectUrl>
+		<PackageLicenseUrl>https://raw.githubusercontent.com/OleConsignado/otc-annotations/otc-annotations-master/LICENSE</PackageLicenseUrl>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DocumentationFile>bin\Debug\$(TargetFramework)\Otc.ComponentModel.Annotations.xml</DocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+		<DocumentationFile>bin\Release\$(TargetFramework)\Otc.ComponentModel.Annotations.xml</DocumentationFile>
+		<NoWarn>1701;1702;1591</NoWarn>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<Compile Update="Resources\Strings.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Strings.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Update="Resources\Strings.resx">
+			<Generator>ResXFileCodeGenerator</Generator>
+			<LastGenOutput>Strings.Designer.cs</LastGenOutput>
+		</EmbeddedResource>
+	</ItemGroup>
+
+</Project>
